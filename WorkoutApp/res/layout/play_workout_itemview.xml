@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pwivRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/pwivTitleOfExerciseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="Title of Exercise"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/pwivUnitsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwivTitleOfExerciseTV"
+        android:layout_alignBottom="@+id/pwivTitleOfExerciseTV"
+        android:layout_alignParentRight="true"
+        android:text="@string/seconds" />
+
+    <TextView
+        android:id="@+id/pwivSecondsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pwivTitleOfExerciseTV"
+        android:layout_toLeftOf="@+id/pwivUnitsTV"
+        android:hint="60"
+        android:paddingRight="4dp"
+        android:textSize="24sp" />
+
+</RelativeLayout>

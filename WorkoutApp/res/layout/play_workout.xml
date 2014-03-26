@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pwRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/pwTitleOfWorkoutTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Title of Workout"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/pwExerciseProgressTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/pwTitleOfWorkoutTV"
+        android:layout_marginTop="76dp"
+        android:text="@string/exercise_progress"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/pwExerciseProgressPROGBAR"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pwExerciseProgressTV"
+        android:layout_toRightOf="@+id/pwExerciseProgressTV" />
+
+    <TextView
+        android:id="@+id/pwWorkoutProgressTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="143dp"
+        android:text="@string/workout_progress" />
+
+    <ProgressBar
+        android:id="@+id/pwWorkoutProgressPROGBAR"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pwWorkoutProgressTV"
+        android:layout_toRightOf="@+id/pwWorkoutProgressTV" />
+
+    <ListView
+        android:id="@+id/pwListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pwWorkoutProgressTV"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/pwExerciseProgressTV" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/pwSkipBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pwStartBTN"
+        android:layout_alignBottom="@+id/pwStartBTN"
+        android:layout_toRightOf="@+id/pwStartBTN"
+        android:text="@string/skip" />
+
+    <Button
+        android:id="@+id/pwStartBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="47dp"
+        android:layout_marginLeft="90dp"
+        android:text="@string/start" />
+
+</RelativeLayout>
