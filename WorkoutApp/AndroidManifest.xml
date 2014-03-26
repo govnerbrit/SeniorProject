@@ -14,66 +14,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.workoutapp.Splash"
+            android:name="com.example.workoutapp.WorkoutApp"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
-        <activity
-            android:name="com.example.workoutapp.WorkoutApp"
-            android:label="@string/app_name" >
-            <intent-filter>
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.workoutapp.WorkoutActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.workoutapp.WorkoutActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.workoutapp.EditWorkoutActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.workoutapp.EditWorkoutActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.workoutapp.EditExerciseActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.workoutapp.EditExerciseActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.workoutapp.WorkoutItemActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.workoutapp.WorkoutItemActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-      	<activity
-            android:name="com.example.workoutapp.EditWorkoutItemActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.example.workoutapp.EditWorkoutItemActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
