@@ -20,5 +20,11 @@
     <string name="record">Record</string>
     <string name="play">Play</string>
     <string name="app_title">Workout App</string>
+    <string name="title_activity_workout">WorkoutActivity</string>
+    <string name="title_activity_edit_workout">EditWorkoutActivity</string>
+    <string name="title_activity_edit_exercise">EditExerciseActivity</string>
+    <string name="title_activity_workout_item">WorkoutItemActivity</string>
+    <string name="title_activity_adapter">Adapter</string>
+    <string name="title_activity_edit_workout_item">EditWorkoutItemActivity</string>
 
 </resources>

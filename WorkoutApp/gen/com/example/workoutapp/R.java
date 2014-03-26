@@ -63,8 +63,8 @@ public final class R {
         public static final int pwivUnitsTV=0x7f080021;
         public static final int tsRelativeLayout=0x7f080023;
         public static final int tsTitleTV=0x7f080024;
-        public static final int wAddWorkoutBTN=0x7f080026;
-        public static final int wListView=0x7f080027;
+        public static final int wAddWorkoutBTN=0x7f080027;
+        public static final int wListView=0x7f080026;
         public static final int wRelativeLayout=0x7f080025;
         public static final int wivEditBTN=0x7f080029;
         public static final int wivRelativeLayout=0x7f080028;
@@ -83,7 +83,13 @@ public final class R {
         public static final int workout_itemview=0x7f030008;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int adapter=0x7f070000;
+        public static final int edit_exercise=0x7f070001;
+        public static final int edit_workout=0x7f070002;
+        public static final int edit_workout_item=0x7f070003;
+        public static final int main=0x7f070004;
+        public static final int workout=0x7f070005;
+        public static final int workout_item=0x7f070006;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -102,6 +108,12 @@ public final class R {
         public static final int seconds=0x7f05000a;
         public static final int skip=0x7f050009;
         public static final int start=0x7f050008;
+        public static final int title_activity_adapter=0x7f050017;
+        public static final int title_activity_edit_exercise=0x7f050015;
+        public static final int title_activity_edit_workout=0x7f050014;
+        public static final int title_activity_edit_workout_item=0x7f050018;
+        public static final int title_activity_workout=0x7f050013;
+        public static final int title_activity_workout_item=0x7f050016;
         public static final int voice=0x7f05000f;
         public static final int workout=0x7f050003;
         public static final int workout_progress=0x7f050007;

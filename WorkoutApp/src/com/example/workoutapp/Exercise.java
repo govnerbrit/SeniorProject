@@ -1,7 +1,5 @@
 package com.example.workoutapp;
 
-import java.util.ArrayList;
-
 public class Exercise {
 	
 	private String exerciseName;
