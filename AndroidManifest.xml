@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.workoutapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:debuggable="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.workoutapp.Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.workoutapp.WorkoutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.WorkoutActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.workoutapp.EditWorkoutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.EditWorkoutActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.workoutapp.EditExerciseActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.EditExerciseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.workoutapp.WorkoutItemActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.WorkoutItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+      	<activity
+            android:name="com.example.workoutapp.EditWorkoutItemActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.EditWorkoutItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
