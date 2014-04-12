@@ -20,7 +20,6 @@ import android.widget.ListView;
 
 public class EditWorkoutActivity extends Activity{
 
-	public static Workout workout;
 	public static ArrayAdapter<String> ExerciseAdapter;
 	public static List<Exercise> ExerciseList = new ArrayList<Exercise>();
 	public static Exercise exercise;
@@ -28,11 +27,13 @@ public class EditWorkoutActivity extends Activity{
 	Button SaveBTN, DeleteBTN, AddNewExerciseBTN;
 	EditText titleOfWorkoutET;
 	private String passedVar;
+	Bundle extras;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.edit_workout);
+		extras = getIntent().getExtras();
 		SaveBTN = (Button)findViewById(R.id.ewSaveBTN);
 		DeleteBTN = (Button)findViewById(R.id.ewDeleteBTN);
 		AddNewExerciseBTN = (Button)findViewById(R.id.ewAddNewExerciseBTN);
@@ -60,6 +61,7 @@ public class EditWorkoutActivity extends Activity{
 
 			@Override
 			public void onClick(View arg0) {
+				
 				WorkoutActivity.workoutAdapter.notifyDataSetChanged();
 				finish();
 			}});
@@ -108,7 +110,9 @@ public class EditWorkoutActivity extends Activity{
 
 		@Override
 		public void afterTextChanged(Editable s) {
-			WorkoutActivity.workoutList.get(Integer.parseInt(passedVar)).setWorkoutName(s.toString().toString());
+			
+			//WorkoutActivity.workoutList.get(Integer.parseInt(passedVar)).setWorkoutName(s.toString().toString());
+			
 		}
 
 		@Override
