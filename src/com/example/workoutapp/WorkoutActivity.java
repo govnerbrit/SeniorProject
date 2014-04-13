@@ -17,9 +17,8 @@ import android.widget.TextView;
 
 public class WorkoutActivity extends ListActivity {
 
-	public static final String NAME_EXTRA = "name_key";
-	public static final int EDIT_ID = 0;
-	protected static final String adapter = null;
+	public static final String TITLE_EXTRA = "title_key";
+	
 	public static List<Workout> workoutList = new ArrayList<Workout>();
 	private ListView workoutListView;
 	public static WorkoutAdapter workoutAdapter;
@@ -37,6 +36,7 @@ public class WorkoutActivity extends ListActivity {
 		wAddWorkoutBTN.setOnClickListener(addButtonListener);
 	}
 	
+	// Adds new workout.
 	private OnClickListener addButtonListener = new OnClickListener() {
 		
 		@Override
@@ -44,32 +44,35 @@ public class WorkoutActivity extends ListActivity {
 			Intent i = new Intent(WorkoutActivity.this, EditWorkoutActivity.class);
 			Workout workout = new Workout("");
 			workoutAdapter.add(workout);
-			String name = workout.getWorkoutName();
-			i.putExtra(NAME_EXTRA, name);
+			String title = workout.getWorkoutName();
+			i.putExtra(TITLE_EXTRA, title);
 			startActivity(i);
 		}
 	};
 	
+	// Starts workout.
 	private OnClickListener startButtonListener = new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//Intent i = new Intent(WorkoutActivity.this, PlayWorkoutActivity.class);
-				Workout workout = new Workout("Workout");
-				workoutList.add(workout);
-				//startActivity(i);
+				Intent i = new Intent(WorkoutActivity.this, PlayWorkoutActivity.class);
+				Workout workout = (Workout) v.getTag();
+				String title = workout.getWorkoutName();
+				i.putExtra(TITLE_EXTRA, title);
+				startActivity(i);
 			}
 	};
-		
+	
+	// Edits workout.
 	private OnClickListener editButtonListener = new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(WorkoutActivity.this, EditWorkoutActivity.class);
 				Workout workout = (Workout) v.getTag();
-				String name = workout.getWorkoutName();
-				i.putExtra(NAME_EXTRA, name);
-				startActivityForResult(i, EDIT_ID);
+				String title = workout.getWorkoutName();
+				i.putExtra(TITLE_EXTRA, title);
+				startActivity(i);
 			}
 	};
 	
@@ -116,12 +119,12 @@ public class WorkoutActivity extends ListActivity {
 		
 	}
 
-public static Workout getWorkoutInfo(String wTitle) {
-	for(Workout w : workoutList) {
-		if (wTitle.equals(w.getWorkoutName())) {
-			return w;
+	public static Workout getWorkoutInfo(String wTitle) {
+		for(Workout w : workoutList) {
+			if (wTitle.equals(w.getWorkoutName())) {
+				return w;
+			}
 		}
+		return null;
 	}
-	return null;
-}
 }

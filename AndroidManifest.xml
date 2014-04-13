@@ -9,7 +9,6 @@
         android:targetSdkVersion="17" />
 
     <application
-        android:debuggable="true"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -28,6 +27,15 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.WorkoutActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.workoutapp.PlayWorkoutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.workoutapp.PlayWorkoutActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

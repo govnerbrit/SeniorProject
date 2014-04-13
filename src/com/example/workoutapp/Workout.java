@@ -3,6 +3,7 @@ package com.example.workoutapp;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Workout {
 
 	private String workoutName;

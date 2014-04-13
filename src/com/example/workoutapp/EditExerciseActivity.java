@@ -1,136 +1,98 @@
 package com.example.workoutapp;
 
-import android.os.Bundle;
+
 import android.app.Activity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.Menu;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class EditExerciseActivity extends Activity{
-
-	EditText TitleOfExerciseET, SecondsET;
-	Button PlayBTN, RecordBTN, DeleteRecordingBTN, SaveBTN, DeleteBTN;
-	private String passedVar;
-   
+	
+	private Exercise eInfo;
+	private EditText eeTitleOfExerciseET, eeSecondsET;
+	private Button eePlayBTN, eeRecordBTN, eeDeleteRecordingBTN, eeSaveBTN, eeDeleteBTN;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.edit_exercise);
-		PlayBTN = (Button)findViewById(R.id.eePlayBTN);
-		RecordBTN = (Button)findViewById(R.id.eeRecordBTN);
-		DeleteRecordingBTN = (Button)findViewById(R.id.eeDeleteRecordingBTN);
-		SaveBTN = (Button)findViewById(R.id.eeSaveBTN);
-		DeleteBTN = (Button)findViewById(R.id.eeDeleteBTN);
-		passedVar = getIntent().getStringExtra("com.example.workoutapp.EditWorkoutItemActivity._viewClicked");
-		TitleOfExerciseET = (EditText)findViewById(R.id.eeTitleOfExerciseET);
-		TitleOfExerciseET.setHint((String) EditWorkoutActivity.ExerciseAdapter.getItem(Integer.parseInt(passedVar)));
-		TitleOfExerciseET.addTextChangedListener(ExerciseNameChangeListener);
-		SecondsET = (EditText)findViewById(R.id.eeSecondsET);
-		SecondsET.addTextChangedListener(SecondsChangeListener);
+
+		// eInfo is the Exercise Object passed from the EditWorkoutActivity.
+		// We can now use any of the getters & setters on eInfo.
+		String eTitle = getIntent().getExtras().getString(EditWorkoutActivity.TITLE_EXTRA);
+		eInfo = EditWorkoutActivity.getExerciseInfo(eTitle);
 		
-		SetUpOnClickListeners();
-	}
-
-	private void SetUpOnClickListeners() {
-		PlayBTN.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		RecordBTN.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		DeleteRecordingBTN.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		SaveBTN.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				EditWorkoutActivity.ExerciseAdapter.notifyDataSetChanged();
-				finish();
-				
-			}
-		});
-		DeleteBTN.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				EditWorkoutActivity.ExerciseList.remove(Integer.parseInt(passedVar));
-				EditWorkoutActivity.ExerciseAdapter.notifyDataSetChanged();	
-				finish();
-				
-			}
-		});
+		eePlayBTN = (Button)findViewById(R.id.eePlayBTN);
+		eePlayBTN.setOnClickListener(playButtonListener);
+		eeRecordBTN = (Button)findViewById(R.id.eeRecordBTN);
+		eeRecordBTN.setOnClickListener(recordButtonListener);
+		eeDeleteRecordingBTN = (Button)findViewById(R.id.eeDeleteRecordingBTN);
+		eeDeleteRecordingBTN.setOnClickListener(deleteRecordingButtonListener);
+		eeSaveBTN = (Button)findViewById(R.id.eeSaveBTN);
+		eeSaveBTN.setOnClickListener(saveButtonListener);
+		eeDeleteBTN = (Button)findViewById(R.id.eeDeleteBTN);
+		eeDeleteBTN.setOnClickListener(deleteButtonListener);
 		
+		eeTitleOfExerciseET = (EditText)findViewById(R.id.eeTitleOfExerciseET);
+		eeTitleOfExerciseET.setText(eInfo.getExerciseName());
+		eeSecondsET = (EditText)findViewById(R.id.eeSecondsET);
+		eeSecondsET.setText("" + eInfo.getDuration());
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.edit_exercise, menu);
-		return true;
-	}
-	
-	private TextWatcher ExerciseNameChangeListener = new TextWatcher(){
+	// Plays current audio.
+	private OnClickListener playButtonListener = new OnClickListener() {
 
 		@Override
-		public void afterTextChanged(Editable s) {
-			EditWorkoutActivity.ExerciseList.get(Integer.parseInt(passedVar)).setExerciseName(s.toString().toString());
-		}
-
-		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count,
-				int after) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onTextChanged(CharSequence s, int start, int before,
-				int count) {
-			// TODO Auto-generated method stub
-			
+		public void onClick(View v) {
+			// PLAY RECORDED AUDIO FILE CODE
 		}
 		
 	};
 	
-	private TextWatcher SecondsChangeListener = new TextWatcher(){
+	// Records new audio.
+	private OnClickListener recordButtonListener = new OnClickListener() {
 
 		@Override
-		public void afterTextChanged(Editable s) {
-			EditWorkoutActivity.ExerciseList.get(Integer.parseInt(passedVar)).setDuration(Integer.parseInt(s.toString().toString()));
+		public void onClick(View v) {
+			// RECORD AUDIO FILE CODE
 		}
+		
+	};
+	
+	// Deletes audio.
+	private OnClickListener deleteRecordingButtonListener = new OnClickListener() {
 
 		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count,
-				int after) {
-			// TODO Auto-generated method stub
-			
+		public void onClick(View v) {
+			// DELETE PREVIOUSLY RECORDED AUDIO FILE CODE
 		}
+		
+	};
+	
+	// Saves exercise.
+	private OnClickListener saveButtonListener = new OnClickListener() {
 
 		@Override
-		public void onTextChanged(CharSequence s, int start, int before,
-				int count) {
-			// TODO Auto-generated method stub
-			
+		public void onClick(View v) {
+			eInfo.setExerciseName(eeTitleOfExerciseET.getText().toString());
+			eInfo.setDuration(Integer.parseInt(eeSecondsET.getText().toString()));
+			//eInfo.setRecordingPath(recordingPath);
+			finish();
+		}
+		
+	};
+	
+	// Deletes exercise.
+	private OnClickListener deleteButtonListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			EditWorkoutActivity.exerciseList.remove(eInfo);
+			EditWorkoutActivity.exerciseAdapter.notifyDataSetChanged();
+			finish();
 		}
 		
 	};
