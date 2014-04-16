@@ -2,7 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pwivRelativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="@drawable/activityborder">
+
+    <TextView
+        android:id="@+id/pwivUnitsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pwivSecondsTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:text="@string/seconds"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/pwivTitleOfExerciseTV"
@@ -10,26 +21,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:hint="Title of Exercise"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/pwivUnitsTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/pwivTitleOfExerciseTV"
-        android:layout_alignBottom="@+id/pwivTitleOfExerciseTV"
-        android:layout_alignParentRight="true"
-        android:text="@string/seconds" />
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:hint="@string/exercise_title"
+        android:textSize="56sp" />
 
     <TextView
         android:id="@+id/pwivSecondsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/pwivTitleOfExerciseTV"
-        android:layout_toLeftOf="@+id/pwivUnitsTV"
-        android:hint="60"
+        android:layout_below="@+id/pwivTitleOfExerciseTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:hint="@string/sixty_seconds"
         android:paddingRight="4dp"
-        android:textSize="24sp" />
+        android:textColorHint="#3598FF"
+        android:textSize="40sp" />
 
 </RelativeLayout>

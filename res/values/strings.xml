@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Workout App</string>
+    <string name="app_name">Aerobic Assistant</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="workout">Workout</string>
@@ -19,14 +19,17 @@
     <string name="voice">"Voice: "</string>
     <string name="record">Record</string>
     <string name="play">Play</string>
-    <string name="app_title">Workout App</string>
     <string name="title_activity_workout">WorkoutActivity</string>
     <string name="title_activity_edit_workout">EditWorkoutActivity</string>
     <string name="title_activity_edit_exercise">EditExerciseActivity</string>
     <string name="title_activity_workout_item">WorkoutItemActivity</string>
     <string name="title_activity_adapter">Adapter</string>
     <string name="title_activity_edit_workout_item">EditWorkoutItemActivity</string>
-    <string name="exercise">Exercise</string>
     <string name="seconds_left">seconds left</string>
-
+    <string name="exercise_title">Title of Exercise</string>
+    <string name="workout_title">Title of Workout</string>
+    <string name="zero_seconds">0</string>
+    <string name="sixty_seconds">60</string>
+    <string name="exercise">"Exercise: "</string>
+    
 </resources>

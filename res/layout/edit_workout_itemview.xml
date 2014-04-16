@@ -3,7 +3,8 @@
     android:id="@+id/ewivRelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/activityborder">
 
     <Button
         android:id="@+id/ewivEditBTN"
@@ -11,8 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_margin="5dp"  
+        android:background="@drawable/buttonborder"
         android:gravity="center_vertical|center_horizontal"
-        android:text="@string/edit" />
+        android:text="@string/edit"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/ewivTitleOfExerciseTV"
@@ -20,10 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ewivEditBTN"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/ewivEditBTN"
+        android:layout_margin="5dp"
         android:layout_toLeftOf="@+id/ewivEditBTN"
         android:gravity="center_vertical"
-        android:hint="Title of Exercise"
+        android:minHeight="52dp"
+        android:hint="@string/exercise_title"
         android:textSize="24sp" />
 
 </RelativeLayout>
