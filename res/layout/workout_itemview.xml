@@ -38,8 +38,9 @@
         android:layout_margin="5dp"
         android:layout_toLeftOf="@+id/wivStartBTN"
         android:gravity="center_vertical"
-        android:minHeight="52dp"
         android:hint="@string/workout_title"
+        android:minHeight="52dp"
+        android:textColor="#000000"
         android:textSize="20sp" />
 
 </RelativeLayout>

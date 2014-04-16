@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/wAddWorkoutBTN"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true" 
+        android:textColor="@android:color/black"
+        />
 
      <Button
          android:id="@+id/wAddWorkoutBTN"

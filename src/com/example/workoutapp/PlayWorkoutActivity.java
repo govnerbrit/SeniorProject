@@ -35,8 +35,8 @@ public class PlayWorkoutActivity extends ListActivity {
 		pwSkipBTN.setOnClickListener(skipButtonListener);
 		
 		// NEED TO SET THE EXERCISES AND FIGURE A WAY TO RUN IT.
-		pwExerciseTV = (TextView)findViewById(R.id.pwExerciseTV);
-		pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
+		//pwExerciseTV = (TextView)findViewById(R.id.pwExerciseTV);
+		//pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
 	}
 	
 	private OnClickListener startButtonListener = new OnClickListener() {
