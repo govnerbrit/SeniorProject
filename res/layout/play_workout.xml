@@ -14,54 +14,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center_vertical|center_horizontal"
         android:text="Title of Workout"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/pwExerciseProgressTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/pwTitleOfWorkoutTV"
-        android:layout_marginTop="76dp"
-        android:text="@string/exercise_progress"
-        android:textSize="16sp" />
-
-    <ProgressBar
-        android:id="@+id/pwExerciseProgressPROGBAR"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/pwExerciseProgressTV"
-        android:layout_toRightOf="@+id/pwExerciseProgressTV" />
-
-    <TextView
-        android:id="@+id/pwWorkoutProgressTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="143dp"
-        android:text="@string/workout_progress" />
-
-    <ProgressBar
-        android:id="@+id/pwWorkoutProgressPROGBAR"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/pwWorkoutProgressTV"
-        android:layout_toRightOf="@+id/pwWorkoutProgressTV" />
-
-    <ListView
-        android:id="@+id/pwListView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pwWorkoutProgressTV"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/pwExerciseProgressTV" >
-
-    </ListView>
+        android:textSize="32sp" />
 
     <Button
         android:id="@+id/pwSkipBTN"
@@ -82,4 +35,35 @@
         android:layout_marginLeft="90dp"
         android:text="@string/start" />
 
+    <TextView
+        android:id="@+id/pwExerciseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/pwSkipBTN"
+        android:text="@string/exercise"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/pwCountdownTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pwSkipBTN"
+        android:layout_alignRight="@+id/pwSkipBTN"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="0"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/pwSecondsLabelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/seconds_left"
+        android:textSize="16sp" />
+    
 </RelativeLayout>

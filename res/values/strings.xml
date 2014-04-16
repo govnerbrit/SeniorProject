@@ -26,5 +26,7 @@
     <string name="title_activity_workout_item">WorkoutItemActivity</string>
     <string name="title_activity_adapter">Adapter</string>
     <string name="title_activity_edit_workout_item">EditWorkoutItemActivity</string>
+    <string name="exercise">Exercise</string>
+    <string name="seconds_left">seconds left</string>
 
 </resources>

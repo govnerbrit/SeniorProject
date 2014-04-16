@@ -6,7 +6,6 @@ import java.util.List;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +57,7 @@ public class EditWorkoutActivity extends ListActivity{
 		@Override
 		public void onClick(View v) {
 			wInfo.setWorkoutName(ewTitleOfWorkoutET.getText().toString());
+			WorkoutActivity.workoutAdapter.notifyDataSetChanged();
 			finish();
 		}
 		

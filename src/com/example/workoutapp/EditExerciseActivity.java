@@ -80,6 +80,7 @@ public class EditExerciseActivity extends Activity{
 			eInfo.setExerciseName(eeTitleOfExerciseET.getText().toString());
 			eInfo.setDuration(Integer.parseInt(eeSecondsET.getText().toString()));
 			//eInfo.setRecordingPath(recordingPath);
+			EditWorkoutActivity.exerciseAdapter.notifyDataSetChanged();
 			finish();
 		}
 		
