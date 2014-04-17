@@ -6,58 +6,54 @@
     android:orientation="vertical" 
     android:background="@drawable/activityborder">
 
-    <ProgressBar
-        android:id="@+id/pwWorkoutProgressPROGBAR"
-        style="?android:attr/progressBarStyleHorizontal"
+    <TextView
+        android:id="@+id/pwSecondsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/pwWorkoutProgressTV"
-        android:layout_toRightOf="@+id/pwWorkoutProgressTV"
-        android:layout_marginRight="8dp" />
+        android:layout_below="@+id/pwCountdownTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:text="@string/seconds"
+        android:textSize="24sp" />
 
-    <ListView
-        android:id="@+id/pwListView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/pwCountdownTV"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/pwWorkoutProgressTV"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/pwExerciseProgressTV" >
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="0"
+        android:textSize="56sp"
+        android:textColor="#3598FF" />
 
-    </ListView>
+    <TextView
+        android:id="@+id/pwExerciseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pwCountdownTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="@string/exercise_pw"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/pwTitleOfWorkoutTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/workout_title"
-        android:textColor="#3598FF"
         android:textSize="32sp" />
-
-    <TextView
-        android:id="@+id/pwExerciseProgressTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/pwTitleOfWorkoutTV"
-        android:layout_marginTop="32dp"
-        android:text="@string/exercise_progress"
-        android:layout_marginLeft="8dp"
-        android:textSize="16sp" />
 
     <Button
         android:id="@+id/pwStartBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/pwWorkoutProgressTV"
-        android:layout_marginBottom="26dp"
-        android:layout_marginRight="22dp"
+        android:layout_marginBottom="43dp"
+        android:layout_toLeftOf="@+id/pwSecondsTV"
         android:background="@drawable/buttonborder"
         android:text="@string/start"
         android:textColor="#FFFFFF" />
@@ -68,29 +64,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/pwStartBTN"
         android:layout_alignBottom="@+id/pwStartBTN"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="26dp"
+        android:layout_toRightOf="@+id/pwSecondsTV"
         android:background="@drawable/buttonborder"
         android:text="@string/skip"
         android:textColor="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/pwWorkoutProgressTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pwStartBTN"
-        android:layout_alignParentLeft="true"
-        android:text="@string/workout_progress" 
-        android:layout_marginLeft="8dp"/>
-
-    <ProgressBar
-        android:id="@+id/pwExerciseProgressPROGBAR"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/pwExerciseProgressTV"
-        android:layout_toRightOf="@+id/pwExerciseProgressTV"
-        android:layout_marginRight="8dp" />
 
 </RelativeLayout>

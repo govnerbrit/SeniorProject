@@ -31,5 +31,6 @@
     <string name="zero_seconds">0</string>
     <string name="sixty_seconds">60</string>
     <string name="exercise">"Exercise: "</string>
+    <string name="exercise_pw">Exercise</string>
     
 </resources>

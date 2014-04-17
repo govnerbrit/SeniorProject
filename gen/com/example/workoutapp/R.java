@@ -30,9 +30,9 @@ public final class R {
         public static final int titleborder=0x7f020006;
     }
     public static final class id {
-        public static final int AA_logo=0x7f080025;
+        public static final int AA_logo=0x7f080023;
         public static final int ExerciseTV=0x7f080009;
-        public static final int action_settings=0x7f08002c;
+        public static final int action_settings=0x7f08002a;
         public static final int eeDeleteBTN=0x7f08000a;
         public static final int eeDeleteRecordingBTN=0x7f080008;
         public static final int eeDurationTV=0x7f080005;
@@ -54,27 +54,25 @@ public final class R {
         public static final int ewivTitleOfExerciseTV=0x7f080013;
         public static final int hRelativeLayout=0x7f080014;
         public static final int hWorkoutBTN=0x7f080015;
-        public static final int pwExerciseProgressPROGBAR=0x7f08001e;
-        public static final int pwExerciseProgressTV=0x7f08001a;
-        public static final int pwListView=0x7f080019;
+        public static final int pwCountdownTV=0x7f080018;
+        public static final int pwExerciseTV=0x7f080019;
         public static final int pwRelativeLayout=0x7f080016;
-        public static final int pwSkipBTN=0x7f08001d;
-        public static final int pwStartBTN=0x7f08001c;
-        public static final int pwTitleOfWorkoutTV=0x7f08001b;
-        public static final int pwWorkoutProgressPROGBAR=0x7f080017;
-        public static final int pwWorkoutProgressTV=0x7f080018;
-        public static final int pwivRelativeLayout=0x7f08001f;
-        public static final int pwivSecondsTV=0x7f080021;
-        public static final int pwivTitleOfExerciseTV=0x7f080022;
-        public static final int pwivUnitsTV=0x7f080020;
-        public static final int tsRelativeLayout=0x7f080023;
-        public static final int tsTitleTV=0x7f080024;
-        public static final int wAddWorkoutBTN=0x7f080027;
-        public static final int wRelativeLayout=0x7f080026;
-        public static final int wivEditBTN=0x7f080029;
-        public static final int wivRelativeLayout=0x7f080028;
-        public static final int wivStartBTN=0x7f08002a;
-        public static final int wivTitleOfWorkoutTV=0x7f08002b;
+        public static final int pwSecondsTV=0x7f080017;
+        public static final int pwSkipBTN=0x7f08001c;
+        public static final int pwStartBTN=0x7f08001b;
+        public static final int pwTitleOfWorkoutTV=0x7f08001a;
+        public static final int pwivRelativeLayout=0x7f08001d;
+        public static final int pwivSecondsTV=0x7f08001f;
+        public static final int pwivTitleOfExerciseTV=0x7f080020;
+        public static final int pwivUnitsTV=0x7f08001e;
+        public static final int tsRelativeLayout=0x7f080021;
+        public static final int tsTitleTV=0x7f080022;
+        public static final int wAddWorkoutBTN=0x7f080025;
+        public static final int wRelativeLayout=0x7f080024;
+        public static final int wivEditBTN=0x7f080027;
+        public static final int wivRelativeLayout=0x7f080026;
+        public static final int wivStartBTN=0x7f080028;
+        public static final int wivTitleOfWorkoutTV=0x7f080029;
     }
     public static final class layout {
         public static final int edit_exercise=0x7f030000;
@@ -106,6 +104,7 @@ public final class R {
         public static final int edit=0x7f050005;
         public static final int exercise=0x7f05001d;
         public static final int exercise_progress=0x7f050006;
+        public static final int exercise_pw=0x7f05001e;
         public static final int exercise_title=0x7f050019;
         public static final int hello_world=0x7f050002;
         public static final int play=0x7f050011;
