@@ -1,9 +1,13 @@
 package com.example.workoutapp;
 
-
+import java.io.File;
+import java.io.IOException;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaRecorder;
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,6 +18,10 @@ public class EditExerciseActivity extends Activity{
 	private Exercise eInfo;
 	private EditText eeTitleOfExerciseET, eeSecondsET;
 	private Button eePlayBTN, eeRecordBTN, eeDeleteRecordingBTN, eeSaveBTN, eeDeleteBTN;
+	private MediaPlayer player;
+	private MediaRecorder recorder;
+	private String FILE;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,7 @@ public class EditExerciseActivity extends Activity{
 		// We can now use any of the getters & setters on eInfo.
 		String eTitle = getIntent().getExtras().getString(EditWorkoutActivity.TITLE_EXTRA);
 		eInfo = EditWorkoutActivity.getExerciseInfo(eTitle);
+		FILE = Environment.getExternalStorageDirectory() + "/" + eInfo.getExerciseName() + ".3gpp";
 		
 		eePlayBTN = (Button)findViewById(R.id.eePlayBTN);
 		eePlayBTN.setOnClickListener(playButtonListener);
@@ -45,32 +54,91 @@ public class EditExerciseActivity extends Activity{
 	// Plays current audio.
 	private OnClickListener playButtonListener = new OnClickListener() {
 
-		@Override
+		/*
+		 *When playing media player on emulator there will be static due to it using the computers mic
+		 *When played on device no static will be present. 
+		 */
 		public void onClick(View v) {
-			// PLAY RECORDED AUDIO FILE CODE
+			player = new MediaPlayer();
+			try {
+				player.setDataSource(FILE);
+				player.prepare();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			player.start();
+			player.setOnCompletionListener(new OnCompletionListener() {
+				
+				@Override
+				public void onCompletion(MediaPlayer mp) {
+					mp.release();
+					
+				}
+			});
 		}
-		
+
 	};
 	
 	// Records new audio.
 	private OnClickListener recordButtonListener = new OnClickListener() {
-
+		/*
+		 * When record button is pressed text will change so that same button can be used to end recording. 
+		 * Not necessary on play due to OnCompletionListener() method. 
+		 */
 		@Override
 		public void onClick(View v) {
-			// RECORD AUDIO FILE CODE
+			if(eeRecordBTN.getText().toString().equals("Record")){
+				if(recorder != null){
+					recorder.release();
+				}
+				File outFile = new File(FILE);
+				if(outFile != null){
+					outFile.delete();
+				}
+				
+				recorder = new MediaRecorder();
+				recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+				recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+				recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+				recorder.setOutputFile(FILE);
+				try {
+					recorder.prepare();
+				} catch (IllegalStateException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				recorder.start();
+				eeRecordBTN.setText("Stop");
+			}
+			else if(eeRecordBTN.getText().toString().equals("Stop")){
+				recorder.stop();
+				recorder.release();
+				eeRecordBTN.setText("Record");
+			}
 		}
-		
+
 	};
-	
+
 	// Deletes audio.
 	private OnClickListener deleteRecordingButtonListener = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			// DELETE PREVIOUSLY RECORDED AUDIO FILE CODE
+			File outFile = new File(FILE);
+			if(outFile != null){
+				outFile.delete();
+			}	
 		}
 		
 	};
+
 	
 	// Saves exercise.
 	private OnClickListener saveButtonListener = new OnClickListener() {

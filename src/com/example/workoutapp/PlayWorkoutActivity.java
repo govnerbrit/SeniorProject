@@ -1,10 +1,13 @@
 package com.example.workoutapp;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 import android.app.Activity;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +22,8 @@ public class PlayWorkoutActivity extends Activity {
 	public static Exercise firstExercise;
 	private TextView pwExerciseTV, pwCountdownTV, pwTitleOfWorkoutTV;
 	private Button pwStartBTN, pwSkipBTN;
+	private String FILE; //Current playing Exercise Filepath
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +47,15 @@ public class PlayWorkoutActivity extends Activity {
 		pwExerciseTV.setText(firstExercise.getExerciseName().toString());
 		pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
 		pwCountdownTV.setText(firstExercise.getDuration() + "");
+		
+		FILE = ""; // call eInfo.getFilePath()
 	}
 	
 	private OnClickListener startButtonListener = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
+			playVoice();
 			// START WORKOUT CODE
 		}
 		
@@ -62,4 +70,37 @@ public class PlayWorkoutActivity extends Activity {
 		
 	};
 
+	public void playVoice()
+	{
+		/*
+		 *When playing media player on emulator there will be static due to it using the computers mic
+		 *When played on device no static will be present. 
+		 */
+		MediaPlayer player = new MediaPlayer();
+		try {
+			player.setDataSource(FILE);
+			player.prepare();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		player.start();
+		player.setOnCompletionListener(new OnCompletionListener() {
+			
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				
+			}
+		});
+		
+		
+	}
+
 }
+
