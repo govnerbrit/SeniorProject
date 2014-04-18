@@ -122,6 +122,7 @@ public class EditExerciseActivity extends Activity{
 				recorder.release();
 				eeRecordBTN.setText("Record");
 			}
+			StorageManager.saveWorkoutList(getApplicationContext());
 		}
 
 	};
@@ -135,6 +136,7 @@ public class EditExerciseActivity extends Activity{
 			if(outFile != null){
 				outFile.delete();
 			}	
+			StorageManager.saveWorkoutList(getApplicationContext());
 		}
 		
 	};
@@ -149,6 +151,7 @@ public class EditExerciseActivity extends Activity{
 			eInfo.setDuration(Integer.parseInt(eeSecondsET.getText().toString()));
 			//eInfo.setRecordingPath(recordingPath);
 			EditWorkoutActivity.exerciseAdapter.notifyDataSetChanged();
+			StorageManager.saveWorkoutList(getApplicationContext());
 			finish();
 		}
 		
@@ -161,6 +164,7 @@ public class EditExerciseActivity extends Activity{
 		public void onClick(View v) {
 			EditWorkoutActivity.exerciseList.remove(eInfo);
 			EditWorkoutActivity.exerciseAdapter.notifyDataSetChanged();
+			StorageManager.saveWorkoutList(getApplicationContext());
 			finish();
 		}
 		

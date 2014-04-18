@@ -30,7 +30,7 @@ public class WorkoutActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.workout);
 		workoutListView = getListView();
-		workoutList = new ArrayList<Workout>();
+		StorageManager.loadWorkoutList(getApplicationContext());
 		workoutAdapter = new WorkoutAdapter(this, workoutList);
 		workoutListView.setAdapter(workoutAdapter);
 		wAddWorkoutBTN = (Button)findViewById(R.id.wAddWorkoutBTN);
