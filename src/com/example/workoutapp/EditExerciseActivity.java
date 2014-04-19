@@ -2,12 +2,15 @@ package com.example.workoutapp;
 
 import java.io.File;
 import java.io.IOException;
+
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaRecorder;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -20,8 +23,8 @@ public class EditExerciseActivity extends Activity{
 	private Button eePlayBTN, eeRecordBTN, eeDeleteRecordingBTN, eeSaveBTN, eeDeleteBTN;
 	private MediaPlayer player;
 	private MediaRecorder recorder;
-	private String FILE;
-
+	private static final String DIR_NAME = Environment.getExternalStorageDirectory() + File.separator + "recordings";
+	private static final String TAG = "EditExercise";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,6 @@ public class EditExerciseActivity extends Activity{
 		// We can now use any of the getters & setters on eInfo.
 		String eTitle = getIntent().getExtras().getString(EditWorkoutActivity.TITLE_EXTRA);
 		eInfo = EditWorkoutActivity.getExerciseInfo(eTitle);
-		FILE = Environment.getExternalStorageDirectory() + "/" + eInfo.getExerciseName() + ".3gpp";
 		
 		eePlayBTN = (Button)findViewById(R.id.eePlayBTN);
 		eePlayBTN.setOnClickListener(playButtonListener);
@@ -49,6 +51,15 @@ public class EditExerciseActivity extends Activity{
 		eeTitleOfExerciseET.setText(eInfo.getExerciseName());
 		eeSecondsET = (EditText)findViewById(R.id.eeSecondsET);
 		eeSecondsET.setText("" + eInfo.getDuration());
+		
+		recorder = new MediaRecorder();
+		player = new MediaPlayer();
+		
+		File dir = new File(DIR_NAME);
+		if(!dir.exists()){
+			dir.mkdirs();
+		}
+		
 	}
 
 	// Plays current audio.
@@ -59,28 +70,16 @@ public class EditExerciseActivity extends Activity{
 		 *When played on device no static will be present. 
 		 */
 		public void onClick(View v) {
-			player = new MediaPlayer();
+			
 			try {
-				player.setDataSource(FILE);
+				player.reset();
+				player.setDataSource(eInfo.getRecordingPath());
 				player.prepare();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (SecurityException e) {
-				e.printStackTrace();
-			} catch (IllegalStateException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+				player.start();
+			} catch (Exception e) {
+				Log.d(TAG, "Exception: " + e);
+
 			}
-			player.start();
-			player.setOnCompletionListener(new OnCompletionListener() {
-				
-				@Override
-				public void onCompletion(MediaPlayer mp) {
-					mp.release();
-					
-				}
-			});
 		}
 
 	};
@@ -93,33 +92,33 @@ public class EditExerciseActivity extends Activity{
 		 */
 		@Override
 		public void onClick(View v) {
+			
 			if(eeRecordBTN.getText().toString().equals("Record")){
+				String recordFileName = DIR_NAME + File.separator 
+						+ "recording" + System.currentTimeMillis() + ".3gpp";
 				if(recorder != null){
-					recorder.release();
-				}
-				File outFile = new File(FILE);
-				if(outFile != null){
-					outFile.delete();
-				}
-				
-				recorder = new MediaRecorder();
-				recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-				recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-				recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-				recorder.setOutputFile(FILE);
+					recorder.reset();
+				}				
 				try {
+					Log.d(TAG, "Filename: " + recordFileName);
+					recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+					recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+					recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+					recorder.setOutputFile(recordFileName);
 					recorder.prepare();
-				} catch (IllegalStateException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
+					Log.d(TAG, "Recorder is prepared");
+					recorder.start();
+					Log.d(TAG, "Recorder is started");
+					eeRecordBTN.setText("Stop");
+					eInfo.setRecordingPath(recordFileName);
+				} catch (Exception e) {
+					Log.e(TAG, "Recorder prepare exception: " + e);
+					eInfo.setRecordingPath(null);
+					eeRecordBTN.setText("Record");
 				}
-				recorder.start();
-				eeRecordBTN.setText("Stop");
 			}
 			else if(eeRecordBTN.getText().toString().equals("Stop")){
 				recorder.stop();
-				recorder.release();
 				eeRecordBTN.setText("Record");
 			}
 			StorageManager.saveWorkoutList(getApplicationContext());
@@ -132,10 +131,21 @@ public class EditExerciseActivity extends Activity{
 
 		@Override
 		public void onClick(View v) {
-			File outFile = new File(FILE);
-			if(outFile != null){
-				outFile.delete();
-			}	
+			try{
+				Log.d(TAG, "deleting file: " + eInfo.getRecordingPath());
+				File deleteFile = new File(eInfo.getRecordingPath());
+				deleteFile.delete();
+				
+			}
+			catch(Exception e){
+				Log.d(TAG, "Delete failed");
+			}
+			try{
+				eInfo.setRecordingPath(null);
+			}
+			catch(Exception e){
+				Log.d(TAG, "Failed to set recording path to null");
+			}
 			StorageManager.saveWorkoutList(getApplicationContext());
 		}
 		

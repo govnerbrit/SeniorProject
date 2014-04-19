@@ -65,14 +65,13 @@ public class PlayWorkoutActivity extends Activity {
 	
 	@Override
 	protected void onStop() {
-		// TODO Auto-generated method stub
+
 		super.onStop();
 		countDownTimer.cancel();
 	}
 
 	private OnClickListener startButtonListener = new OnClickListener() {
 
-		@Override
 		public void onClick(View v) {
 			// Resumes timer
 			if (pwPauseResumeBTN.getText().toString() == "Resume"){
