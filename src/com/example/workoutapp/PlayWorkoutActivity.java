@@ -27,6 +27,7 @@ public class PlayWorkoutActivity extends Activity {
 	private int currentExerciseNum;
 	private long exerciseStart;
 	private CountDownTimer countDownTimer;
+	public static enum PlayState {PLAY, PAUSE};
 
 	
 	@Override
@@ -50,13 +51,6 @@ public class PlayWorkoutActivity extends Activity {
 		pwExerciseTV = (TextView)findViewById(R.id.pwExerciseTV);
 		pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
 
-		/*for(Exercise e: exerciseList){
-			currentExercise = e;
-			pwTitleOfWorkoutTV.setText(pwInfo.getWorkoutName());
-			pwExerciseTV.setText(currentExercise.getExerciseName().toString());
-			pwCountdownTV.setText(currentExercise.getDuration() + "");
-			
-		}*/
 		
 		createCountdownTimer(0, exerciseList.get(0).getDuration() * 1000);
 		

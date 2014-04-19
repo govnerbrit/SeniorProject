@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class EditExerciseActivity extends Activity{
 	
 	private Exercise eInfo;
@@ -25,6 +26,8 @@ public class EditExerciseActivity extends Activity{
 	private MediaRecorder recorder;
 	private static final String DIR_NAME = Environment.getExternalStorageDirectory() + File.separator + "recordings";
 	private static final String TAG = "EditExercise";
+	public enum RecordState {RECORD, STOP};
+	private RecordState recordBTNState;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,8 @@ public class EditExerciseActivity extends Activity{
 		
 		recorder = new MediaRecorder();
 		player = new MediaPlayer();
+		
+		recordBTNState = RecordState.RECORD;
 		
 		File dir = new File(DIR_NAME);
 		if(!dir.exists()){
@@ -93,7 +98,9 @@ public class EditExerciseActivity extends Activity{
 		@Override
 		public void onClick(View v) {
 			
-			if(eeRecordBTN.getText().toString().equals("Record")){
+			if(recordBTNState == RecordState.RECORD){
+				recordBTNState = RecordState.STOP;
+				eeRecordBTN.setText("Stop");
 				String recordFileName = DIR_NAME + File.separator 
 						+ "recording" + System.currentTimeMillis() + ".3gpp";
 				if(recorder != null){
@@ -109,7 +116,6 @@ public class EditExerciseActivity extends Activity{
 					Log.d(TAG, "Recorder is prepared");
 					recorder.start();
 					Log.d(TAG, "Recorder is started");
-					eeRecordBTN.setText("Stop");
 					eInfo.setRecordingPath(recordFileName);
 				} catch (Exception e) {
 					Log.e(TAG, "Recorder prepare exception: " + e);
@@ -117,9 +123,10 @@ public class EditExerciseActivity extends Activity{
 					eeRecordBTN.setText("Record");
 				}
 			}
-			else if(eeRecordBTN.getText().toString().equals("Stop")){
-				recorder.stop();
+			else if(recordBTNState == RecordState.STOP){
+				recordBTNState = RecordState.RECORD;
 				eeRecordBTN.setText("Record");
+				recorder.stop();
 			}
 			StorageManager.saveWorkoutList(getApplicationContext());
 		}
