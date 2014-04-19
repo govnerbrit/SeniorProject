@@ -58,6 +58,7 @@ public class EditWorkoutActivity extends ListActivity{
 		public void onClick(View v) {
 			wInfo.setWorkoutName(ewTitleOfWorkoutET.getText().toString());
 			WorkoutActivity.workoutAdapter.notifyDataSetChanged();
+			StorageManager.saveWorkoutList(getApplicationContext());
 			finish();
 		}
 		

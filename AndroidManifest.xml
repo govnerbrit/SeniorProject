@@ -23,7 +23,8 @@
         android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         <activity
             android:name="com.example.workoutapp.Splash"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,8 @@
         </activity>
         <activity
             android:name="com.example.workoutapp.WorkoutActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.WorkoutActivity" />
 
@@ -41,7 +43,9 @@
         </activity>
         <activity
             android:name="com.example.workoutapp.PlayWorkoutActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">"
             <intent-filter>
                 <action android:name="com.example.workoutapp.PlayWorkoutActivity" />
 
@@ -50,7 +54,8 @@
         </activity>
         <activity
             android:name="com.example.workoutapp.EditWorkoutActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.EditWorkoutActivity" />
 
@@ -59,7 +64,8 @@
         </activity>
         <activity
             android:name="com.example.workoutapp.EditExerciseActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.EditExerciseActivity" />
 
@@ -68,7 +74,8 @@
         </activity>
         <activity
             android:name="com.example.workoutapp.WorkoutItemActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.WorkoutItemActivity" />
 
@@ -77,7 +84,8 @@
         </activity>
       	<activity
             android:name="com.example.workoutapp.EditWorkoutItemActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.workoutapp.EditWorkoutItemActivity" />
 
