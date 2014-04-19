@@ -22,7 +22,7 @@ public class PlayWorkoutActivity extends Activity {
 	public static List<Exercise> exerciseList = new ArrayList<Exercise>();
 	public static Exercise currentExercise;
 	private TextView pwExerciseTV, pwCountdownTV, pwTitleOfWorkoutTV;
-	private Button pwStartBTN, pwSkipBTN;
+	private Button pwPauseResumeBTN, pwSkipBTN;
 	private String FILE; //Current playing Exercise Filepath
 	private int currentExerciseNum;
 	private long exerciseStart;
@@ -39,13 +39,14 @@ public class PlayWorkoutActivity extends Activity {
 		exerciseList = pwInfo.getExerciseList();
 		currentExercise = exerciseList.get(0);
 		
-		pwStartBTN = (Button)findViewById(R.id.pwStartBTN);
-		pwStartBTN.setOnClickListener(startButtonListener);
+		pwPauseResumeBTN = (Button)findViewById(R.id.pwPauseResumeBTN);
+		pwPauseResumeBTN.setOnClickListener(startButtonListener);
 		pwSkipBTN = (Button)findViewById(R.id.pwSkipBTN);
 		pwSkipBTN.setOnClickListener(skipButtonListener);
 		
 		// NEED TO SET THE EXERCISES AND FIGURE A WAY TO RUN IT.
 		pwTitleOfWorkoutTV = (TextView)findViewById(R.id.pwTitleOfWorkoutTV);
+		pwTitleOfWorkoutTV.setText(pwInfo.getWorkoutName());
 		pwExerciseTV = (TextView)findViewById(R.id.pwExerciseTV);
 		pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
 
@@ -62,12 +63,28 @@ public class PlayWorkoutActivity extends Activity {
 		//FILE = ""; // call eInfo.getFilePath()
 	}
 	
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		countDownTimer.cancel();
+	}
+
 	private OnClickListener startButtonListener = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			playVoice();
-			// START WORKOUT CODE
+			// Resumes timer
+			if (pwPauseResumeBTN.getText().toString() == "Resume"){
+				pwPauseResumeBTN.setText("Pause");
+				createCountdownTimer(currentExerciseNum, Integer.parseInt(pwCountdownTV.getText().toString()) * 1000);
+			}
+			// Pauses timer
+			else{
+				pwPauseResumeBTN.setText("Resume");
+				countDownTimer.cancel();
+			}
+			
 		}
 		
 	};
@@ -76,7 +93,18 @@ public class PlayWorkoutActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			// SKIP CURRENT EXERCISE CODE
+			if (exerciseList.size() - 1 != currentExerciseNum){
+				countDownTimer.cancel();
+				currentExerciseNum++;
+				createCountdownTimer(currentExerciseNum, exerciseList.get(currentExerciseNum).getDuration() * 1000);
+			}
+			else if (exerciseList.size() - 1 == currentExerciseNum){
+				countDownTimer.cancel();
+				pwCountdownTV.setText("0");
+			}
+			else {
+				
+			}
 		}
 		
 	};
@@ -97,8 +125,12 @@ public class PlayWorkoutActivity extends Activity {
 			@Override
 			public void onFinish() {
 				if(currentExerciseNum < exerciseList.size() - 1){
-					createCountdownTimer(currentExerciseNum + 1, 
-							exerciseList.get(currentExerciseNum + 1).getDuration() * 1000);
+					currentExerciseNum++;
+					createCountdownTimer(currentExerciseNum, 
+							exerciseList.get(currentExerciseNum).getDuration() * 1000);
+				}
+				else{
+					pwCountdownTV.setText("0");
 				}
 				
 			}

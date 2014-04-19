@@ -48,22 +48,22 @@
         android:textSize="32sp" />
 
     <Button
-        android:id="@+id/pwStartBTN"
+        android:id="@+id/pwPauseResumeBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="43dp"
         android:layout_toLeftOf="@+id/pwSecondsTV"
         android:background="@drawable/buttonborder"
-        android:text="@string/start"
+        android:text="Pause"
         android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/pwSkipBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/pwStartBTN"
-        android:layout_alignBottom="@+id/pwStartBTN"
+        android:layout_alignBaseline="@+id/pwPauseResumeBTN"
+        android:layout_alignBottom="@+id/pwPauseResumeBTN"
         android:layout_toRightOf="@+id/pwSecondsTV"
         android:background="@drawable/buttonborder"
         android:text="@string/skip"

@@ -56,10 +56,10 @@ public final class R {
         public static final int hWorkoutBTN=0x7f080015;
         public static final int pwCountdownTV=0x7f080018;
         public static final int pwExerciseTV=0x7f080019;
+        public static final int pwPauseResumeBTN=0x7f08001b;
         public static final int pwRelativeLayout=0x7f080016;
         public static final int pwSecondsTV=0x7f080017;
         public static final int pwSkipBTN=0x7f08001c;
-        public static final int pwStartBTN=0x7f08001b;
         public static final int pwTitleOfWorkoutTV=0x7f08001a;
         public static final int pwivRelativeLayout=0x7f08001d;
         public static final int pwivSecondsTV=0x7f08001f;
