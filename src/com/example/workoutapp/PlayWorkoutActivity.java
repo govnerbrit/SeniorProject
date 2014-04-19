@@ -107,6 +107,7 @@ public class PlayWorkoutActivity extends Activity {
 			else {
 				countDownTimer.cancel();
 				pwCountdownTV.setText("0");
+				pwExerciseTV.setText("Workout Complete!");
 			}
 		}
 		
