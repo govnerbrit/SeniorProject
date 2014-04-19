@@ -187,4 +187,16 @@ public class EditExerciseActivity extends Activity{
 		
 	};
 
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		if(player != null){
+			player.release();
+		}
+		if(recorder != null){
+			recorder.release();
+		}
+	}
+
 }

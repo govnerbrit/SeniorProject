@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,12 +29,15 @@ public class PlayWorkoutActivity extends Activity {
 	private long exerciseStart;
 	private CountDownTimer countDownTimer;
 	public static enum PlayState {PLAY, PAUSE};
+	private PlayState playBTNState;
+	private MediaPlayer player;
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "PlayWorkoutActivity.onCreate: enter");
 		setContentView(R.layout.play_workout);
 		String pwTitle = getIntent().getExtras().getString(WorkoutActivity.TITLE_EXTRA);
 		pwInfo = WorkoutActivity.getWorkoutInfo(pwTitle);
@@ -51,10 +55,17 @@ public class PlayWorkoutActivity extends Activity {
 		pwExerciseTV = (TextView)findViewById(R.id.pwExerciseTV);
 		pwCountdownTV = (TextView)findViewById(R.id.pwCountdownTV);
 
-		
-		createCountdownTimer(0, exerciseList.get(0).getDuration() * 1000);
+		player = new MediaPlayer();
+		playBTNState = PlayState.PAUSE;
 		
 		//FILE = ""; // call eInfo.getFilePath()
+	}
+	
+	
+	@Override
+	protected void onStart(){
+		super.onStart();
+		createCountdownTimer(0, (exerciseList.get(0).getDuration() * 1000));
 	}
 	
 	@Override
@@ -68,12 +79,14 @@ public class PlayWorkoutActivity extends Activity {
 
 		public void onClick(View v) {
 			// Resumes timer
-			if (pwPauseResumeBTN.getText().toString() == "Resume"){
+			if (playBTNState == PlayState.PLAY){
+				playBTNState = PlayState.PAUSE;
 				pwPauseResumeBTN.setText("Pause");
 				createCountdownTimer(currentExerciseNum, Integer.parseInt(pwCountdownTV.getText().toString()) * 1000);
 			}
 			// Pauses timer
 			else{
+				playBTNState = PlayState.PLAY;
 				pwPauseResumeBTN.setText("Resume");
 				countDownTimer.cancel();
 			}
@@ -91,12 +104,9 @@ public class PlayWorkoutActivity extends Activity {
 				currentExerciseNum++;
 				createCountdownTimer(currentExerciseNum, exerciseList.get(currentExerciseNum).getDuration() * 1000);
 			}
-			else if (exerciseList.size() - 1 == currentExerciseNum){
+			else {
 				countDownTimer.cancel();
 				pwCountdownTV.setText("0");
-			}
-			else {
-				
 			}
 		}
 		
@@ -109,10 +119,11 @@ public class PlayWorkoutActivity extends Activity {
 		exerciseStart = System.currentTimeMillis();
 		String currentExerciseName = currentExercise.getExerciseName().toString();
 		pwExerciseTV.setText(currentExerciseName);
-		String currentSec = Math.round(timeMsec/1000) + "";
+		String currentSec = (int) Math.ceil(timeMsec/1000) + "";
 		pwCountdownTV.setText(currentSec);
 			
 		Log.d(TAG, "createCountdownTimer: creating timer:");
+		playVoice();
 		countDownTimer = new CountDownTimer(timeMsec, 1000){
 
 			@Override
@@ -121,18 +132,28 @@ public class PlayWorkoutActivity extends Activity {
 					currentExerciseNum++;
 					createCountdownTimer(currentExerciseNum, 
 							exerciseList.get(currentExerciseNum).getDuration() * 1000);
+					
 				}
 				else{
 					pwCountdownTV.setText("0");
+					pwExerciseTV.setText("Workout Complete!");
 				}
 				
 			}
 
 			@Override
 			public void onTick(long timeLeft) {
-				Log.d(TAG, "onTick called: " + timeLeft + " msec left");
-				pwCountdownTV.setText(Math.round(timeLeft/1000) + "");				
-				
+				int roundedTime = (int) Math.ceil(timeLeft/(float)1000);
+				Log.d(TAG, "onTick called: " + timeLeft + " msec left, rounded to " + roundedTime);
+				pwCountdownTV.setText((int) Math.ceil(timeLeft/(float)1000) + "");
+				if(roundedTime <= 2){
+					Handler oneSecHandler = new Handler();
+					oneSecHandler.postDelayed(new Runnable(){
+						public void run(){
+							pwCountdownTV.setText("1");
+						}
+					}, 1000);
+				}
 			}
 			
 		};
@@ -146,31 +167,16 @@ public class PlayWorkoutActivity extends Activity {
 		 *When playing media player on emulator there will be static due to it using the computers mic
 		 *When played on device no static will be present. 
 		 */
-		MediaPlayer player = new MediaPlayer();
 		try {
-			player.setDataSource(FILE);
-			player.prepare();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalStateException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		player.start();
-		player.setOnCompletionListener(new OnCompletionListener() {
-			
-			@Override
-			public void onCompletion(MediaPlayer mp) {
-				mp.release();
-				
+			if(currentExercise.getRecordingPath() != null){
+				player.reset();
+				player.setDataSource(currentExercise.getRecordingPath());
+				player.prepare();
+				player.start();
 			}
-		});
-		
-		
+		} catch (Exception e) {
+			Log.e(TAG, "Failed to play recording", e);
+		}
 	}
-
 }
 
