@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eeRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="@drawable/activityborder">
+
+    <EditText
+        android:id="@+id/eeTitleOfExerciseET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/exercise_title"
+        android:textColorHint="#3598FF"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/eeUnitsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eeVoiceTV"
+        android:layout_toRightOf="@+id/eeSecondsET"
+        android:gravity="center_vertical"
+        android:text="@string/seconds"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/eeDurationTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/eeSecondsET"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:text="@string/duration"
+        android:layout_marginLeft="6dip"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/eeSecondsET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eeTitleOfExerciseET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:ems="3"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="@string/zero_seconds"
+        android:inputType="number"
+        android:textSize="24sp" >
+
+        
+    </EditText>
+
+    <TextView
+        android:id="@+id/eeVoiceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/eeDurationTV"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/eeDurationTV"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/voice"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/eeRecordBTN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/eePlayBTN"
+        android:background="@drawable/recordborder"
+        android:text="@string/record"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/eeDeleteRecordingBTN"        
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/eeRecordBTN"
+        android:background="@drawable/buttonborder"
+        android:text="@string/delete"
+        android:layout_margin="5dp"
+        android:layout_width="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/ExerciseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/eeDeleteRecordingBTN"
+        android:gravity="center"
+        android:text="@string/exercise"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/eePlayBTN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/eeVoiceTV"
+        android:layout_margin="5dp"
+        android:background="@drawable/buttonborder"
+        android:text="@string/play"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/eeDeleteBTN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eeSaveBTN"
+        android:layout_margin="5dp"
+        android:background="@drawable/buttonborder"
+        android:text="@string/delete"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/eeSaveBTN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ExerciseTV"
+        android:layout_margin="5dp"
+        android:background="@drawable/buttonborder"
+        android:text="@string/save"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>
+<!-- From: file:/C:/Users/Sabrina/dev/SeniorProject/app/src/main/res/layout/edit_exercise.xml -->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/activityborder">
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wAddWorkoutBTN"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" 
+        android:textColor="@android:color/black"
+        />
+
+     <Button
+         android:id="@+id/wAddWorkoutBTN"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="5dp"
+         android:layout_marginLeft="6dp"
+         android:layout_marginRight="6dp"
+         android:background="@drawable/buttonborder"
+         android:text="@string/add_new_workout"
+         android:textColor="#FFFFFF" />
+
+</RelativeLayout>
+<!-- From: file:/C:/Users/Sabrina/dev/SeniorProject/app/src/main/res/layout/workout.xml -->

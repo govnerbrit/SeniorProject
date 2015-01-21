@@ -1,0 +1,252 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\SeniorProject.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* .metadata\
+* .metadata\.lock
+* .metadata\.log
+* .metadata\.mylyn\
+* .metadata\.mylyn\repositories.xml.zip
+* .metadata\.mylyn\tasks.xml.zip
+* .metadata\.plugins\
+* .metadata\.plugins\org.eclipse.core.resources\
+* .metadata\.plugins\org.eclipse.core.resources\.history\
+* .metadata\.plugins\org.eclipse.core.resources\.history\13\
+* .metadata\.plugins\org.eclipse.core.resources\.history\13\c0d580a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\1d\
+* .metadata\.plugins\org.eclipse.core.resources\.history\1d\b03694a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\2a\
+* .metadata\.plugins\org.eclipse.core.resources\.history\2a\c01177a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\30\
+* .metadata\.plugins\org.eclipse.core.resources\.history\30\70bf78a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\31\
+* .metadata\.plugins\org.eclipse.core.resources\.history\31\a0f882a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\3\
+* .metadata\.plugins\org.eclipse.core.resources\.history\3\402c7da017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\4b\
+* .metadata\.plugins\org.eclipse.core.resources\.history\4b\30c986a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\56\
+* .metadata\.plugins\org.eclipse.core.resources\.history\56\f01575a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\5\
+* .metadata\.plugins\org.eclipse.core.resources\.history\5\409d7fa017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\63\
+* .metadata\.plugins\org.eclipse.core.resources\.history\63\207da1a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\68\
+* .metadata\.plugins\org.eclipse.core.resources\.history\68\60097ba017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\72\
+* .metadata\.plugins\org.eclipse.core.resources\.history\72\605598a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\7b\
+* .metadata\.plugins\org.eclipse.core.resources\.history\7b\506a8ea017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\7e\
+* .metadata\.plugins\org.eclipse.core.resources\.history\7e\203184a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\8d\
+* .metadata\.plugins\org.eclipse.core.resources\.history\8d\006716953eb500131acb9a7b860d1151
+* .metadata\.plugins\org.eclipse.core.resources\.history\9\
+* .metadata\.plugins\org.eclipse.core.resources\.history\9\201389a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\a8\
+* .metadata\.plugins\org.eclipse.core.resources\.history\a8\700b96a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\a\
+* .metadata\.plugins\org.eclipse.core.resources\.history\a\10039aa017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\ad\
+* .metadata\.plugins\org.eclipse.core.resources\.history\ad\602776a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\b5\
+* .metadata\.plugins\org.eclipse.core.resources\.history\b5\70f484a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\c0\
+* .metadata\.plugins\org.eclipse.core.resources\.history\c0\e01069b83eb500131acb9a7b860d1151
+* .metadata\.plugins\org.eclipse.core.resources\.history\c2\
+* .metadata\.plugins\org.eclipse.core.resources\.history\c2\f0dcdcf416b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\d3\
+* .metadata\.plugins\org.eclipse.core.resources\.history\d3\50cb461e3fb500131acb9a7b860d1151
+* .metadata\.plugins\org.eclipse.core.resources\.history\d\
+* .metadata\.plugins\org.eclipse.core.resources\.history\d\c0f37ba017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\d\f0f779a017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\de\
+* .metadata\.plugins\org.eclipse.core.resources\.history\de\5056dbf416b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\ea\
+* .metadata\.plugins\org.eclipse.core.resources\.history\ea\f07f8da017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\ed\
+* .metadata\.plugins\org.eclipse.core.resources\.history\ed\e0e78aa017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\f6\
+* .metadata\.plugins\org.eclipse.core.resources\.history\f6\70478ca017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.history\f6\f05c8aae3eb500131acb9a7b860d1151
+* .metadata\.plugins\org.eclipse.core.resources\.history\f9\
+* .metadata\.plugins\org.eclipse.core.resources\.history\f9\90248aa017b5001311f7bb381f8743e4
+* .metadata\.plugins\org.eclipse.core.resources\.projects\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\50\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\50\81\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\50\81\96\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\50\81\96\9c\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\50\81\96\9c\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\26\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\26\81\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\26\81\96\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\26\81\96\9c\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\26\81\96\9c\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\7\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\8e\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\8e\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\3c\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\3c\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\4\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\4\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\5f\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\5f\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\61\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\61\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\66\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\66\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\82\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\82\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\cd\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\cd\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\d6\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\d6\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\de\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\de\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\de\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\eb\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\eb\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\eb\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\ee\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\ee\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\a0\ee\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\e4\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\e4\81\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\e4\81\96\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\e4\81\96\9c\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\e4\81\96\9c\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\history.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.indexes\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.markers.snap
+* .metadata\.plugins\org.eclipse.core.resources\.projects\WorkoutApp\.syncinfo.snap
+* .metadata\.plugins\org.eclipse.core.resources\.root\
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.root\.markers.snap
+* .metadata\.plugins\org.eclipse.core.resources\.safetable\
+* .metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources
+* .metadata\.plugins\org.eclipse.core.resources\.snap
+* .metadata\.plugins\org.eclipse.core.runtime\
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.core.resources.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.debug.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.epp.usagedata.recording.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.launching.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.mylyn.context.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.mylyn.monitor.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.prefs
+* .metadata\.plugins\org.eclipse.epp.usagedata.recording\
+* .metadata\.plugins\org.eclipse.epp.usagedata.recording\usagedata.csv
+* .metadata\.plugins\org.eclipse.jdt.core\
+* .metadata\.plugins\org.eclipse.jdt.core\2220534143.index
+* .metadata\.plugins\org.eclipse.jdt.core\305303521.index
+* .metadata\.plugins\org.eclipse.jdt.core\3680220431.index
+* .metadata\.plugins\org.eclipse.jdt.core\externalLibsTimeStamps
+* .metadata\.plugins\org.eclipse.jdt.core\javaLikeNames.txt
+* .metadata\.plugins\org.eclipse.jdt.core\savedIndexNames.txt
+* .metadata\.plugins\org.eclipse.jdt.core\variablesAndContainers.dat
+* .metadata\.plugins\org.eclipse.jdt.launching\
+* .metadata\.plugins\org.eclipse.jdt.launching\.install.xml
+* .metadata\.plugins\org.eclipse.jdt.launching\libraryInfos.xml
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\2014\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\2014\3\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\2014\3\13\
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\2014\3\13\refactorings.history
+* .metadata\.plugins\org.eclipse.ltk.core.refactoring\.refactorings\.workspace\2014\3\13\refactorings.index
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\0.log
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\logback.1.0.200.20111228-1245.xml
+* .metadata\.plugins\org.eclipse.team.cvs.core\
+* .metadata\.plugins\org.eclipse.team.cvs.core\.running
+* .metadata\.plugins\org.eclipse.ui.workbench\
+* .metadata\.plugins\org.eclipse.ui.workbench\workingsets.xml
+* .metadata\.plugins\org.eclipse.wb.discovery.core\
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_ercp.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_gwt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_swing.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_swt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_xwt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkits.xml
+* .metadata\.plugins\org.eclipse.wst.xml.core\
+* .metadata\.plugins\org.eclipse.wst.xml.core\default_catalog.xml
+* .metadata\.plugins\org.eclipse.wst.xml.core\system_catalog.xml
+* .metadata\version.ini
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* lint.xml => app\lint.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
