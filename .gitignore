@@ -1,0 +1,42 @@
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file
+
+!gradle-wrapper.jar
+
+# Built application files
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+build/
+/*/build
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+.idea/*
+
+# Local configuration files
+local.properties
+
+# Log files
+*.log
+
+# Dex cache
+/build/intermediates/dex-cache/cache.xml
+/*/workspace.xml
+/*/workspace.xml
+/*/cache.xml
+

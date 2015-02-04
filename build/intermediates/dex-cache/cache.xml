@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Sabrina\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jar="C:\Users\sacown\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="C:\Users\Sabrina\dev\SeniorProject\app\build\intermediates\pre-dexed\debug\gson-2.2.4-c06ffc6a24877c9c8c755c4658e42ebd737b8055.jar" />
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9fe47e30ff46c3ff63ab8735998fb97f58ee3426.jar" />
     </item>
     <item
-        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jar="C:\Users\sacown\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="C:\Users\Sabrina\dev\SeniorProject\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-c30e376a8a37b42530721aa3276156097e39d8df.jar" />
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-36587d7e61fa3bba121f5ae4a2cfacb46a2034f8.jar" />
     </item>
 
 </items>
