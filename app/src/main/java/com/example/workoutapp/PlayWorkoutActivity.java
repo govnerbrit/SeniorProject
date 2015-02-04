@@ -3,6 +3,7 @@ package com.example.workoutapp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
@@ -120,12 +121,13 @@ public class PlayWorkoutActivity extends Activity {
 		exerciseStart = System.currentTimeMillis();
 		String currentExerciseName = currentExercise.getExerciseName().toString();
 		pwExerciseTV.setText(currentExerciseName);
-		String currentSec = (int) Math.ceil(timeMsec/1000) + "";
+		String currentSec = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(timeMsec),
+                TimeUnit.MILLISECONDS.toSeconds(timeMsec) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(timeMsec)));
 		pwCountdownTV.setText(currentSec);
 			
 		Log.d(TAG, "createCountdownTimer: creating timer:");
 		playVoice();
-		countDownTimer = new CountDownTimer(timeMsec, 1000){
+		countDownTimer = new CountDownTimer(timeMsec + 500, 1000){
 
 			@Override
 			public void onFinish() {
@@ -144,19 +146,15 @@ public class PlayWorkoutActivity extends Activity {
 
 			@Override
 			public void onTick(long timeLeft) {
-				int roundedTime = (int) Math.ceil(timeLeft/(float)1000);
-				Log.d(TAG, "onTick called: " + timeLeft + " msec left, rounded to " + roundedTime);
-				pwCountdownTV.setText((int) Math.ceil(timeLeft/(float)1000) + "");
-				if(roundedTime <= 2){
-					Handler oneSecHandler = new Handler();
-					oneSecHandler.postDelayed(new Runnable(){
-						public void run(){
-							pwCountdownTV.setText("1");
-						}
-					}, 1000);
-				}
-			}
-			
+                Log.d(TAG, "timeLeft " + timeLeft + "");
+                //double round = Math.ceil((double)timeLeft / 1000) * 1000;
+				long millis = timeLeft;
+                Log.d(TAG, " long time " + millis + "");
+                String sec = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(millis),
+                        TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+                Log.d(TAG, "time converted from " + millis + " milliseconds to " + sec + " seconds");
+                pwCountdownTV.setText(sec);
+            }
 		};
 		
 		countDownTimer.start();
