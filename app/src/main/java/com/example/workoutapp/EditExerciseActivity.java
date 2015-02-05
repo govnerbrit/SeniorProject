@@ -13,6 +13,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -49,10 +50,11 @@ public class EditExerciseActivity extends Activity{
 		eeSaveBTN.setOnClickListener(saveButtonListener);
 		eeDeleteBTN = (Button)findViewById(R.id.eeDeleteBTN);
 		eeDeleteBTN.setOnClickListener(deleteButtonListener);
-		
+
 		eeTitleOfExerciseET = (EditText)findViewById(R.id.eeTitleOfExerciseET);
 		eeTitleOfExerciseET.setText(eInfo.getExerciseName());
-		eeSecondsET = (EditText)findViewById(R.id.eeSecondsET);
+
+        eeSecondsET = (EditText)findViewById(R.id.eeSecondsET);
 		eeSecondsET.setText("" + eInfo.getDuration());
 		
 		recorder = new MediaRecorder();
@@ -64,7 +66,7 @@ public class EditExerciseActivity extends Activity{
 		if(!dir.exists()){
 			dir.mkdirs();
 		}
-		
+
 	}
 
 	// Plays current audio.

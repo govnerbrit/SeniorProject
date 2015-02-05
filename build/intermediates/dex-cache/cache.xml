@@ -9,6 +9,13 @@
         <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9fe47e30ff46c3ff63ab8735998fb97f58ee3426.jar" />
     </item>
     <item
+        jar="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\classes-deeff47fa57c863e37e7c7e0e82bbfd4f671a198.jar" />
+    </item>
+    <item
         jar="C:\Users\sacown\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
         jumboMode="false"
         revision="21.1.2"
