@@ -87,7 +87,9 @@
                 android:layout_marginRight="2dp"
                 android:background="@drawable/buttonborder"
                 android:text="@string/play"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:elegantTextHeight="false"
+                android:height="36dp" />
 
             <Button
                 android:id="@+id/eeRecordBTN"

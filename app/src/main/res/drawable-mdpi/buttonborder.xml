@@ -7,11 +7,38 @@ How to use on an object, set as the background attribute:
 	android:background="@drawable/buttonborder"
 	
  -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-  android:shape="rectangle">
-  <gradient android:startColor="#3598FF" 
-    android:endColor="#3598FF"
-    android:angle="270" />
-  <corners android:radius="3dp" />
-  <stroke android:width="3px" android:color="#000000" />
-</shape>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+<item android:state_pressed="true" >
+    <shape android:shape="rectangle"  >
+        <corners android:radius="10dp" />
+        <padding android:bottom="2dp"
+            android:left="2dp"
+            android:right="2dp"
+            android:top="2dp"/>
+        <stroke android:width="1dip" android:color="#283A90" />
+        <solid android:color="#283A90"/>
+    </shape>
+</item>
+<item android:state_focused="true">
+    <shape android:shape="rectangle"  >
+        <corners android:radius="10dp" />
+        <padding android:bottom="2dp"
+            android:left="2dp"
+            android:right="2dp"
+            android:top="2dp"/>
+        <stroke android:width="1dip" android:color="#283A90" />
+        <solid android:color="#3598FF"/>
+    </shape>
+</item>
+<item >
+    <shape android:shape="rectangle"  >
+        <corners android:radius="10dp" />
+        <padding android:bottom="2dp"
+            android:left="2dp"
+            android:right="2dp"
+            android:top="2dp"/>
+        <stroke android:width="1dip" android:color="#283A90" />
+        <solid android:color="#3598FF"/>
+    </shape>
+</item>
+</selector>
