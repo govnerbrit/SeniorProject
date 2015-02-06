@@ -26,7 +26,7 @@ How to use on an object, set as the background attribute:
             android:left="2dp"
             android:right="2dp"
             android:top="2dp"/>
-        <stroke android:width="1dip" android:color="#ff601415" />
+        <stroke android:width="1dip" android:color="#FF0000" />
         <solid android:color="#FF0000"/>
     </shape>
 </item>
@@ -37,7 +37,7 @@ How to use on an object, set as the background attribute:
             android:left="2dp"
             android:right="2dp"
             android:top="2dp"/>
-        <stroke android:width="1dip" android:color="#ff601415" />
+        <stroke android:width="1dip" android:color="#FF0000" />
         <solid android:color="#FF0000"/>
     </shape>
 </item>

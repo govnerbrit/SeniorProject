@@ -89,7 +89,8 @@
                 android:text="@string/play"
                 android:textColor="#FFFFFF"
                 android:elegantTextHeight="false"
-                android:height="36dp" />
+                style="?android:attr/borderlessButtonStyle"
+                />
 
             <Button
                 android:id="@+id/eeRecordBTN"
