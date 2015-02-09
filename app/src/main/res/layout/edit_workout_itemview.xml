@@ -20,15 +20,12 @@
 
     <TextView
         android:id="@+id/ewivTitleOfExerciseTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ewivEditBTN"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/ewivEditBTN"
-        android:layout_margin="5dp"
         android:layout_toLeftOf="@+id/ewivEditBTN"
         android:gravity="center_vertical"
         android:minHeight="52dp"
+        android:layout_margin="5dp"
         android:hint="@string/exercise_title"
         android:textSize="24sp" />
 

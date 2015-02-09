@@ -9,18 +9,39 @@
         <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9fe47e30ff46c3ff63ab8735998fb97f58ee3426.jar" />
     </item>
     <item
-        jar="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jar="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\classes-deeff47fa57c863e37e7c7e0e82bbfd4f671a198.jar" />
+        revision="21.1.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\classes-3a87546191d3f66231ad391184fc148e02f1ec87.jar" />
     </item>
     <item
-        jar="C:\Users\sacown\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jar="C:\Users\sacown\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-36587d7e61fa3bba121f5ae4a2cfacb46a2034f8.jar" />
+        revision="21.1.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-be6c4bb19eb9ec34c48fae3d728dfcc720850685.jar" />
+    </item>
+    <item
+        jar="C:\Users\sacown\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9fe47e30ff46c3ff63ab8735998fb97f58ee3426.jar" />
+    </item>
+    <item
+        jar="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-80d4ce20cd6133b6c4cd6674ebe38580142aa1c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\sacown\Documents\Workout\SeniorProject\app\build\intermediates\pre-dexed\debug\classes-39b7d48464e0a4ed1771890a64cb3f6c3e28875f.jar" />
     </item>
 
 </items>

@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/wRelativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="@drawable/activityborder">
+    android:layout_height="match_parent"
+    android:background="@drawable/activityborder"
+    >
 
     <ListView
         android:id="@android:id/list"

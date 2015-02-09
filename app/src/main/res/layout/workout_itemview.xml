@@ -3,7 +3,7 @@
     android:id="@+id/wivRelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
-    android:background="@drawable/activityborder" >
+     >
 
     <Button
         android:id="@+id/wivEditBTN"
@@ -11,7 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="5dp"        
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/buttonborder"        
         android:text="@string/edit"
         android:textColor="#FFFFFF" />
@@ -22,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="3dp"
+        android:layout_marginBottom="5dp"
         android:layout_toLeftOf="@+id/wivEditBTN"
         android:background="@drawable/buttonborder"
         android:text="@string/start"
@@ -30,17 +33,15 @@
 
     <TextView
         android:id="@+id/wivTitleOfWorkoutTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/wivStartBTN"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/wivStartBTN"
+        android:layout_alignBottom="@id/wivStartBTN"
         android:layout_margin="5dp"
         android:layout_toLeftOf="@+id/wivStartBTN"
-        android:gravity="center_vertical"
         android:hint="@string/workout_title"
-        android:minHeight="52dp"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="25sp"
+        />
 
 </RelativeLayout>

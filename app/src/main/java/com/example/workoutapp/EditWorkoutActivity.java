@@ -30,7 +30,7 @@ public class EditWorkoutActivity extends ListActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.edit_workout);
-		
+
 		// wInfo is the Workout Object passed from the WorkoutActivity.
 		// We can now use any of the getters & setters on wInfo.
 		String wTitle = getIntent().getExtras().getString(WorkoutActivity.TITLE_EXTRA);

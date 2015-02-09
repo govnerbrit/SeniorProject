@@ -1,68 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ewRelativeLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/activityborder" >
+    android:background="@drawable/activityborder">
 
     <EditText
         android:id="@+id/ewTitleOfWorkoutET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="@string/workout_title"
         android:textColorHint="#3598FF"
-        android:textSize="24sp" >
-
+        android:textSize="24sp"
+        android:padding="5dp" >
         <requestFocus />
     </EditText>
 
     <ListView
         android:id="@android:id/list"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ewAddNewExerciseBTN"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ewTitleOfWorkoutET"
-        android:layout_marginBottom="10dp"
-       >
-
+        android:layout_marginBottom="55dp"
+        android:layout_below="@id/ewTitleOfWorkoutET" >
     </ListView>
 
-    <Button
-        android:id="@+id/ewAddNewExerciseBTN"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_margin="5dp"       
-        android:layout_above="@+id/ewSaveBTN"
-        android:background="@drawable/buttonborder"
-        android:text="@string/add_new_exercise"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/ewSaveBTN"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above ="@+id/ewDeleteBTN"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:background="@drawable/buttonborder"
-        android:text="@string/save"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/ewDeleteBTN"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/buttonborder"
-        android:text="@string/delete"
-        android:textColor="#FFFFFF" />
+        android:orientation="horizontal"
+        android:weightSum="6">
+        <Button
+            android:id="@+id/ewAddNewExerciseBTN"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonborder"
+            android:text="@string/add_new_exercise"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/ewSaveBTN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonborder"
+            android:text="@string/save"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/ewDeleteBTN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/buttonborder"
+            android:text="@string/delete"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
 </RelativeLayout>

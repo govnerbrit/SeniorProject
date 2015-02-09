@@ -11,5 +11,5 @@ Also, elements on the various activities have had padding added around them to f
  -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
    <solid android:color="#ffffff" />
-   <stroke android:width="5dip" android:color="#3598FF"/>
+
 </shape>
