@@ -76,10 +76,26 @@ public class WorkoutActivity extends ListActivity {
 				startActivity(i);
 			}
 	};
+
+    //Copies workout
+    private OnClickListener copyButtonListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Workout currentWorkout = (Workout) v.getTag();
+            List<Exercise> copiedList = new ArrayList<Exercise>();
+            List<Exercise> currentList = currentWorkout.getExerciseList();
+            for(Exercise e: currentList){
+                copiedList.add(e);
+            }
+            Workout newWorkout = new Workout(currentWorkout.getWorkoutName(), copiedList);
+            workoutList.add(newWorkout);
+            workoutAdapter.notifyDataSetChanged();
+        }
+    };
 	
 	private static class ViewHolder {
 		TextView wivTitleOfWorkoutTV;
-		Button wivEditBTN, wivStartBTN;
+		Button wivEditBTN, wivStartBTN, wivCopyBTN;
 	}
 	
 	class WorkoutAdapter extends ArrayAdapter<Workout> {
@@ -102,6 +118,7 @@ public class WorkoutActivity extends ListActivity {
 				vh.wivTitleOfWorkoutTV = (TextView) convertView.findViewById(R.id.wivTitleOfWorkoutTV);
 				vh.wivEditBTN = (Button) convertView.findViewById(R.id.wivEditBTN);
 				vh.wivStartBTN = (Button) convertView.findViewById(R.id.wivStartBTN);
+                vh.wivCopyBTN = (Button) convertView.findViewById(R.id.wivCopyBTN);
 				convertView.setTag(vh);
 			}
 			else {
@@ -112,9 +129,10 @@ public class WorkoutActivity extends ListActivity {
 			vh.wivTitleOfWorkoutTV.setText(title);
 			vh.wivEditBTN.setTag(workout);
 			vh.wivStartBTN.setTag(workout);
-
+            vh.wivCopyBTN.setTag(workout);
 			vh.wivEditBTN.setOnClickListener(editButtonListener);
 			vh.wivStartBTN.setOnClickListener(startButtonListener);
+            vh.wivCopyBTN.setOnClickListener(copyButtonListener);
 			return convertView;
 		}
 		

@@ -10,9 +10,14 @@ public class Workout {
 	private List<Exercise> exerciseList;
 	
 	public Workout(String workoutName) {
-		this.workoutName = workoutName;
-		exerciseList = new ArrayList<Exercise>();
-	}
+        this.workoutName = workoutName;
+        exerciseList = new ArrayList<Exercise>();
+    }
+    public Workout(String workoutName, List exerciseList) {
+        this.workoutName = workoutName;
+        this.exerciseList = exerciseList;
+
+    }
 
 	public String getWorkoutName() {
 		return workoutName;

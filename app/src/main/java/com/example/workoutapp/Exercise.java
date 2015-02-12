@@ -46,5 +46,5 @@ public class Exercise {
 		this.duration = duration;
 	}
 	
-	
+
 }
